@@ -69,11 +69,11 @@ function drawChartPromeTeacher(event) {
   for (i = 0; i < rating.length; i++) {
 
     if (rating[i]['teacher']) {
-      teacher += (rating[i]['teacher']) / 2;
+      teacher += (rating[i]['teacher']) / rating.length;
     }
 
   }
-  teach.innerHTML = teacher;
+  teach.innerHTML = teacher.toFixed(1);
 
 
 }
@@ -87,10 +87,10 @@ gen = generation.value;
 rating = data[sed][gen].ratings;
 for (i = 0; i < rating.length; i++) {
  if (rating[i]['jedi']) {
-   jedis += parseInt((rating[i]['jedi']) / 2);
+   jedis += (rating[i]['jedi'] / rating.length);
  }
 }
-jedi.innerHTML = jedis + '<br>' + 'OVERAL JEDI RATING';
+jedi.innerHTML = jedis.toFixed(1);
 }
 
 toggleTab(tabs);
