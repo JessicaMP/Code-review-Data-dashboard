@@ -19,14 +19,15 @@ window.addEventListener('load', function() {
       /* this.classList.add('red');*/
     }
   }
-  
+
   var sede = document.getElementById('sede');
   var generation = document.getElementById('generation');
   var sed = '';
   var gen = '';
   students = {};
   generation.addEventListener('change', selectSedeGen);
- 
+  generation.addEventListener('change', drawChartPromeTeacher);
+  generation.addEventListener('change', drawChartPromeJedi);
   function selectSedeGen(event) {
     var studentAct = 0;
     var studentInac = 0;
@@ -46,7 +47,7 @@ window.addEventListener('load', function() {
     }
     // Obteniendo el porcentaje de desertoras
     var porcentaje = (Math.round((studentInac * 100) / total) + ' %');
-    
+
     // navegando por el DOM
     var register = document.getElementById('TotStudents');
     var perStudentInac = document.getElementById('percentaje');
@@ -56,5 +57,41 @@ window.addEventListener('load', function() {
   }
 
 
-  toggleTab(tabs);
+
+//rating={};
+function drawChartPromeTeacher(event) {
+  var teach = document.getElementById('teach');
+  var teacher = 0;
+  sed = sede.value;
+  gen = generation.value;
+  rating = data[sed][gen].ratings;
+
+  for (i = 0; i < rating.length; i++) {
+
+    if (rating[i]['teacher']) {
+      teacher += (rating[i]['teacher']) / 2;
+    }
+
+  }
+  teach.innerHTML = teacher;
+
+
+}
+//Jedi
+
+function drawChartPromeJedi(event) {
+var jedi = document.getElementById('jedi');
+var jedis = 0;
+sed = sede.value;
+gen = generation.value;
+rating = data[sed][gen].ratings;
+for (i = 0; i < rating.length; i++) {
+ if (rating[i]['jedi']) {
+   jedis += parseInt((rating[i]['jedi']) / 2);
+ }
+}
+jedi.innerHTML = jedis + '<br>' + 'OVERAL JEDI RATING';
+}
+
+toggleTab(tabs);
 });
