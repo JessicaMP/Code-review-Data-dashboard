@@ -18,13 +18,14 @@
 
 ## Desarrollo:
 
-1. El trabajo incorpora el diseño de maquetación con estructuras basicas empleadas a
+1. El trabajo incorpora el diseño de maquetación con estructuras basicas empleadas 
 tales como HTMLY CSS.
 
-2. Crearemos diversar funcionalidades que permitiran un mejor desarrollo e integracion de la informacion.
+2. Crearemos diversar funcionalidades que permitiran un mejor desarrollo e integracion de la información.
 
 3. Emplearemos la teoria desarrollada en clase tales como el manejo del DOM,
 BOM ,crearemos eventos que permitiran un mayor flujo de la información.
 4. El principal objetivo es integrar los datos academicos de las alumnas de Laboratoria.
 
-![Con titulo](assets/images/image.png)
+![Con titulo](assets/images/free.jpg)
+
