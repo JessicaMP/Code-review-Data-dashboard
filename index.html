@@ -1,14 +1,396 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Dashboard</title>
-  </head>
-  <body>
 
-		<!-- Base de datos -->
-		<script src="./js/data.js"></script>
-		<!-- Aquí va tus archivos JS -->
-    <script src="./js/app.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="assets/images/data.png">
+</head>
+
+<body>
+  <div class="logo">
+    <img src="assets/images/lab.png" alt="">
+  </div>
+  <div id="select" class="select center">
+    <select class="option" id="sede">
+      <option value="0" selected>SELECCIONE SEDE</option>
+      <option value="LIM">LIMA</option>
+      <option value="AQP">AREQUIPA</option>
+      <option value="CDMX">MEXICO</option>
+      <option value="SCL">CHILE</option>
+    </select>
+    <select class="option" id="generation">
+      <option value="0" selected>SELECCIONE PROMOCION</option>
+      <option value="2016-2">2016-2</option>
+      <option value="2017-1">2017-1</option>
+      <option value="2017-2">2017-2</option>
+    </select>
+  </div>
+
+  <!--div#tab$*3-->
+  <div class="tabs center">
+    <div class="tab" data-text='text1'>OVERVIEW</div>
+    <div class="tab" data-text='text2'>STUDENT</div>
+    <div class="tab" data-text='text3'>TEACHER</div>
+  </div>
+  <!--div#container$*3>p-->
+  <section class="inform" id="container1" data-text='text1'>
+    <div class="firt-boxes">
+
+      <div class="estadist">
+        <div class="block">
+          <h2 class="space">ENROLLMENT</h2>
+          <div class="num">
+            <div class="box">
+              <p id="TotStudents"></p>
+              <h6>student enrolled</h6>
+            </div>
+            <div class="box">
+              <p id="percentaje"></p>
+              <h6>%Dropout</h6>
+            </div>
+          </div>
+          <img src="assets/images/bar-graph.png" alt="">
+        </div>
+      </div>
+      <div class="estadist">
+        <div class="block">
+          <h2 class="space">ACHIEVEMENT</h2>
+          <div class="num">
+            <div class="box">
+              <p></p>
+              <h6>student meet target</h6>
+            </div>
+            <div class="box">
+              <p></p>
+              <h6>% of total</h6>
+            </div>
+          </div>
+          <img src="assets/images/bar-graph.png" alt="">
+        </div>
+      </div>
+      <div class="estadist">
+        <div class="block">
+          <h2 class="space">NET PROMETER SCORE</h2>
+          <div class="num">
+            <div class="box">
+              <p></p>
+              <h6>cumulative NPS</h6>
+            </div>
+            <div class="box">
+              <p></p>
+              <h6 class="size">60 % Promoters</h6>
+              <!-- <h6>30 % Passive</h6>
+              <h6>10 % Detractors</h6> -->
+            </div>
+          </div>
+          <img src="assets/images/bar-graph.png" alt="">
+        </div>
+      </div>
+      <div>
+        <div>
+          <h2>TECH SKILLS </h2>
+          <div class="styleBox2">
+            <select name="curses">
+              <option value="common core">Common Core</option>
+              <option value="sprint">Sprint 1:Create interative</option>
+              <option value="sprint">Sprint 2:Create interative</option>
+              <option value="sprint">Sprint 3:Create interative</option>
+              <option value="sprint">Sprint 4:Create interative</option>
+            </select>
+            <select name="curses">
+              <option value="common core">Java Script</option>
+              <option value="sprint">Sprint 1:Create interative</option>
+              <option value="sprint">Sprint 2:Create interative</option>
+              <option value="sprint">Sprint 3:Create interative</option>
+              <option value="sprint">Sprint 4:Create interative</option>
+            </select>
+            <select name="curses">
+              <option value="common core">UX Design</option>
+              <option value="sprint">Sprint 1:Create interative</option>
+              <option value="sprint">Sprint 2:Create interative</option>
+              <option value="sprint">Sprint 3:Create interative</option>
+              <option value="sprint">Sprint 4:Create interative</option>
+            </select>
+          </div>
+          <div class="boxes">
+            <div>
+              <div class="text3 minBoxes">
+                <h4>90</h4>
+                <h6 class="sizeLetter">#STUDENTS THAT MEET
+                  <br>THE TARGET</h6>
+              </div>
+              <div class="text4 minBoxes">
+                <h4 class="green">62
+                  <i class="fa fa-sort-asc" aria-hidden="true"></i>
+                </h4>
+                <h6 class="sizeLetter">% OF TOTAL(135)</h6>
+              </div>
+              <div class="img-stadist">
+                <img src="assets/images/rectangular-graphic.png" alt="">
+                <div class="circle">
+                  <img src="assets/images/circle-graphic.png" alt="">
+                  <h5>#STUDENTS THAT MEET THE TARGET</h5>
+                  <h5>#STUDENTS THAT DONT MEET THE TARGET</h5>
+                </div>
+              </div>
+            </div>
+            <div class="hse">
+              <h2>LIFE SKILLS </h2>
+              <div class="boxes">
+                <div class="text3 minBoxes2">
+                  <h4>90</h4>
+                  <h6 class="sizeLetter">#STUDENTS THAT MEET
+                    <br>THE TARGET</h6>
+                </div>
+                <div class="text4 minBoxes2">
+                  <h4 class="green">62
+                    <i class="fa fa-sort-asc" aria-hidden="true"></i>
+                  </h4>
+                  <h6 class="sizeLetter">% OF TOTAL(135)</h6>
+                </div>
+                <div class="img-stadist">
+                  <img src="assets/images/rectangular-graphic.png" alt="">
+                  <div class="circle2">
+                    <img src="assets/images/circle-graphic.png" alt="">
+                    <h5>#STUDENTS THAT MEET THE TARGET</h5>
+                    <h5>#STUDENTS THAT DONT MEET THE TARGET</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div class="firstBox">
+                  <div>
+                    <h3>STUDENT SATISFACTION</h3>
+                    <div class="text">
+                      <h4>140</h4>
+                      <h6 class="sizeLetter">#STUDENTS CURRENTLY
+                        <br>ENROLLED</h6>
+                    </div>
+                  </div>
+                  <img class="img2" src="assets/images/graph.png" alt="">
+                </div>
+                <div class="secondBox">
+                  <div>
+                    <h3>TEACHER RATING</h3>
+                    <div class="text">
+                      <h4>4.2</h4>
+                      <h6 class="sizeLetter">OVERALL TEACHER RATING
+                        <br>(CUMULATIVE)</h6>
+                    </div>
+                  </div>
+                  <img class="img2" src="assets/images/graph.png" alt="">
+                </div>
+                <div class="thirdBox">
+                  <div>
+                    <h3>JEDI MASTER RATING</h3>
+                    <div class="text">
+                      <h4 class="green">50
+                        <i class="fa fa-sort-asc" aria-hidden="true"></i>
+                      </h4>
+                      <h6 class="sizeLetter">OVERALL JEDI RATING
+                        <br>(CUMULATIVE)</h6>
+                    </div>
+                  </div>
+                  <img class="img2" src="assets/images/graph2.png" alt="">
+                </div>
+              </div>
+  </section>
+
+
+  <section class="inform hiden" id="container2" data-text='text2'>
+    <div class="menu">
+      <div>
+        <form>
+          <h2>SPECIALIZATION:</h2>
+          <input type="radio" name="gender" value="java" checked>Javascript
+          <br>
+          <input type="radio" name="gender" value="ux">Ux Designer
+          <br>
+          <input type="radio" name="gender" value="front">Front end Designer
+          <br>
+        </form>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+      <div class="coders">
+        <h2>Donna Sloper </h2>
+        <br>
+        <h3> Frontend and Developer</h3>
+        <main class="points">
+          <p>95%
+            <br>TECH SKILLS</p>
+          <p>95.6%
+            <br>LIFE SKILLS</p>
+          <p>INTERN
+            <br> ENGLISH SKILLS</p>
+        </main>
+        <figure>
+          <img class="coder" src="assets/images/coders4.jpg" alt="coder-student">
+        </figure>
+        <main class="major">
+          <p>JAVASCRIP</p>
+          <p>APls</p>
+          <p>JQUERY</p>
+        </main>
+      </div>
+    </div>
+  </section>
+  <section class="inform hiden" id="container3" data-text='text3'>
+  </section>
+  <!-- Base de datos -->
+  <script src="./js/data.js"></script>
+  <!-- Aquí va tus archivos JS -->
+  <script src="./js/app.js"></script>
+</body>
+
 </html>
