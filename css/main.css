@@ -13,7 +13,9 @@
     width: 150px;
     margin: 0 44%;
 }
-
+.green{
+    color:green;
+}
 
 .select {
     padding: 7px 35px; 
