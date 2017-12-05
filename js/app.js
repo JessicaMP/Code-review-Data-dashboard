@@ -1,33 +1,14 @@
 window.addEventListener('load', function() {
-  var tabs = document.querySelectorAll('.tab');
-  var contenidos = document.querySelectorAll('.inform');
-
-  function toggleTab(elem) {
-    for (var i = 0; i < elem.length; i++) {
-      elem[i].addEventListener('click', showContainers);
-    }
-  }
-  function showContainers() {
-    for (var j = 0; j < contenidos.length; j++) {
-      if (this.dataset.text === contenidos[j].dataset.text) {
-        if (contenidos[j].classList.contains('hiden')) {
-          contenidos[j].classList.remove('hiden');
-        }
-      } else {
-        contenidos[j].classList.add('hiden');
-      }
-      /* this.classList.add('red');*/
-    }
-  }
-
   var sede = document.getElementById('sede');
   var generation = document.getElementById('generation');
   var sed = '';
   var gen = '';
   students = {};
+
   generation.addEventListener('change', selectSedeGen);
   generation.addEventListener('change', drawChartPromeTeacher);
   generation.addEventListener('change', drawChartPromeJedi);
+
   function selectSedeGen(event) {
     var studentAct = 0;
     var studentInac = 0;
@@ -56,42 +37,34 @@ window.addEventListener('load', function() {
     perStudentInac.style.color = 'red';
   }
 
+  // rating={};
+  function drawChartPromeTeacher(event) {
+    var teach = document.getElementById('teach');
+    var teacher = 0;
+    sed = sede.value;
+    gen = generation.value;
+    rating = data[sed][gen].ratings;
 
-
-//rating={};
-function drawChartPromeTeacher(event) {
-  var teach = document.getElementById('teach');
-  var teacher = 0;
-  sed = sede.value;
-  gen = generation.value;
-  rating = data[sed][gen].ratings;
-
-  for (i = 0; i < rating.length; i++) {
-
-    if (rating[i]['teacher']) {
-      teacher += (rating[i]['teacher']) / rating.length;
+    for (i = 0; i < rating.length; i++) {
+      if (rating[i]['teacher']) {
+        teacher += (rating[i]['teacher']) / rating.length;
+      }
     }
-
+    teach.innerHTML = teacher.toFixed(1);
   }
-  teach.innerHTML = teacher.toFixed(1);
 
-
-}
-//Jedi
-
-function drawChartPromeJedi(event) {
-var jedi = document.getElementById('jedi');
-var jedis = 0;
-sed = sede.value;
-gen = generation.value;
-rating = data[sed][gen].ratings;
-for (i = 0; i < rating.length; i++) {
- if (rating[i]['jedi']) {
-   jedis += (rating[i]['jedi'] / rating.length);
- }
-}
-jedi.innerHTML = jedis.toFixed(1);
-}
-
-toggleTab(tabs);
+  // Jedi
+  function drawChartPromeJedi(event) {
+    var jedi = document.getElementById('jedi');
+    var jedis = 0;
+    sed = sede.value;
+    gen = generation.value;
+    rating = data[sed][gen].ratings;
+    for (i = 0; i < rating.length; i++) {
+      if (rating[i]['jedi']) {
+        jedis += (rating[i]['jedi'] / rating.length);
+      }
+    }
+    jedi.innerHTML = jedis.toFixed(1);
+  }
 });
