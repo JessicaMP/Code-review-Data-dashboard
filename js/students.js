@@ -79,14 +79,13 @@ function showAlumn(sede) {
       var nSprint = sprint.length;
       var promeTech = 0;
       var promeHse = 0;
-
       for (j = 0; j < sprint.length; j++) {
         promeTech += sprint[j]['score'].tech;
         promeHse += sprint[j]['score'].hse;
         var totalTech = promeTech / nSprint;
         var totalHse = promeHse / nSprint;
         //Tecnico
-}
+};
         var techSkill = document.createElement('p');
         var skillT = document.createElement('span');
         skillT.textContent = 'TECH SKILLS';
@@ -102,12 +101,10 @@ function showAlumn(sede) {
         lifeSkill.innerHTML = (totalHse / 12).toFixed(1) + '%';
         lifeSkill.classList.add('note');
         divNote.appendChild(lifeSkill);
-
         skillH.textContent = 'LIFE SKILLS';
         skillH.classList.add('skill');
         skillH.classList.add('skillH');
         divNote.appendChild(skillH);
-
         //Ingles
         var englishSkill = document.createElement('p');
         englishSkill.textContent = 'INTERM';
