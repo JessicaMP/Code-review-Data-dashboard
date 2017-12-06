@@ -4,7 +4,6 @@
     /* background: rgba(209, 214, 224, 0.247); */
 }
 
-
 .logo {
     background: white;
 }
@@ -19,24 +18,25 @@
 
 .select {
     padding: 7px 35px; 
-    background:rgba(255, 251, 0, 0.548); 
+    background: rgb(253, 208, 8);
     font-weight: 600;
     cursor: pointer;
     border: none;
 }
 
 .option {
-    background: rgb(253, 251, 104);
+    background: rgb(253, 208, 8);;
     padding: 7px 14px;
     margin-right: 21px;
     font-weight: 600;
-    border:none;
-    border-bottom: 4px solid rgb(253, 208, 8); 
+    border: none;
+    border-bottom: 4px solid black; 
+    border-radius: 5px;
 }
 
 
 .option:hover {
-    color :rgb(253, 208, 8);
+    color :black;
     border-bottom: 4px solid black; 
 }
 
@@ -45,16 +45,19 @@
      cursor: pointer;
  }
 
-.tabs {
-    background:rgba(255, 251, 0, 0.548);   
-}
+/* body {
+    background-image: url(../assets/images/vintage.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+} */
 
 .tab {
     display: inline-block;
     padding: 7px;
     margin: 14px 35px;
     cursor: pointer;
-    border-bottom: 4px solid rgb(253, 208, 8);
+    border-bottom: 4px solid black;
     font-weight: 600; 
 }
 
@@ -79,7 +82,8 @@ h2 {
 }
 
 .size {
-    font-size: 12px;
+    font-size: 10px;
+    padding: 0px;
 }
 
 .styleBox2 select{
@@ -128,13 +132,19 @@ h2 {
 .boxes {
     display: inline-block;
 } */
+
 .firstBox {
+   position: relative;
+   top: 35px;
+} 
+
+.thirdBox {
     background-color: white;
     box-sizing: border-box;
     display: inline-block;
     /* padding: 0px; */
     float: left;
-    margin: 10px 30px 10px 60px;
+    margin: 20px;
     border-radius: 10px;
 }
 
@@ -156,27 +166,17 @@ h2 {
 .sizeLetter {
     font-size: 9px;
   }
-  /* .center {
+.center {
     text-align: center;
-} */
+    background-color: #FFC107;
+}
 
 .img2 {
     margin: 0px 50px;
-    width: 280px;
-    height: 180px;
+    width: 230px;
+    height: 150px;
 }
-.thirdBox {
-    background-color: white;
-    box-sizing: border-box;
-    display: inline-block;
-    /* padding: 0px; */
-    float: left;
-    margin: 10px 30px 60px;
-    border-radius: 10px;
-}
-.green {
-    color: #77B433;
-}
+
 .text4 {
     display: inline-block;
     box-sizing: border-box;

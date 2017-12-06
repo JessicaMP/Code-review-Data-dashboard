@@ -8,6 +8,8 @@ window.addEventListener('load', function() {
   generation.addEventListener('change', selectSedeGen);
   generation.addEventListener('change', drawChartPromeTeacher);
   generation.addEventListener('change', drawChartPromeJedi);
+  generation.addEventListener('change', satisfied);
+  generation.addEventListener('change', nps);
 
   function selectSedeGen(event) {
     var studentAct = 0;
@@ -35,6 +37,46 @@ window.addEventListener('load', function() {
     register.textContent = students.length;
     perStudentInac.textContent = porcentaje;
     perStudentInac.style.color = 'red';
+  }
+
+  // función que devuelve promedio NPS
+
+  function nps() { 
+    var contentNps = document.getElementById('nps');
+    sed = sede.value;
+    gen = generation.value;
+    ratings = data[sed][gen].ratings;
+    var totalNps = 0;
+    var total = 0;
+    var getNps = 0;
+
+    for (var i = 0; i < ratings.length; i++) {
+      var difNps = ratings[i]['nps']['promoters'] - ratings[i]['nps']['detractors'];
+      totalNps += difNps;
+      getNps = (totalNps / ratings.length).toFixed(2) + '%';
+      
+    }
+    contentNps.textContent = getNps;
+    contentNps.style.color = 'green';
+    
+  }
+  
+  // función que devuelve porcentaje de satisfacción de las alumnas
+
+  
+  function satisfied() {
+    var alumSatisfied = document.getElementById('studentSatified');
+    var totalPercent = 0;
+    var studentSatified = 0;
+    sed = sede.value;
+    gen = generation.value;
+    ratings = data[sed][gen].ratings;
+    for (var i = 0; i < ratings.length; i++) {
+      totalPercent += ratings[i]['nps']['promoters'];
+
+      studentSatified = (totalPercent / ratings.length).toFixed(2) + '%';
+    }
+    alumSatisfied.textContent = studentSatified;
   }
 
   // rating={};
